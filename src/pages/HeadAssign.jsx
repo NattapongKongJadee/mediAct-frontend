@@ -31,7 +31,7 @@ export default function HeadAssign() {
     setError("");
     setLoading(true);
     try {
-      // 1) รายชื่อพยาบาล
+      //  รายชื่อพยาบาล
       const ures = await api.get("/users", { params: { role: "nurse" } });
       setNurses(Array.isArray(ures.data) ? ures.data : []);
       const sres = await api.get("/shifts");
@@ -57,7 +57,6 @@ export default function HeadAssign() {
           new Date(a.endTime) - new Date(b.endTime)
       );
     if (!filterDate) return list;
-    // filterDate เป็น YYYY-MM-DD -> เทียบกับ startTime ที่เป็น ISO
     return list.filter((r) => {
       const d = new Date(r.startTime);
       const yyyy = d.getFullYear();
@@ -83,7 +82,7 @@ export default function HeadAssign() {
     setError("");
     setAssigning(shiftId);
     try {
-      // POST /shift-assignments  (x-www-form-urlencoded)
+      // POST /shift-assignments
       await api.post(
         "/shift-assignments",
         new URLSearchParams({
@@ -92,7 +91,7 @@ export default function HeadAssign() {
         }),
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       );
-      // success → reload
+      // success  >  reload
       await load();
     } catch (e) {
       console.error(e);
@@ -165,7 +164,7 @@ export default function HeadAssign() {
                           {r.assignedNurse.name ?? r.assignedNurse.email}
                         </span>
                       ) : (
-                        // ยังไม่มี → ให้เลือก
+                        // ยังไม่มี > ให้เลือก
                         <select
                           className="select select-bordered select-sm w-full max-w-xs"
                           value={picked[r.id] ?? ""}

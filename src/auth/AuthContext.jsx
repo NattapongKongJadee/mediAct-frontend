@@ -18,7 +18,6 @@ export const AuthProvider = ({ children }) => {
       const token = res.data?.access_token;
       if (!token) return false;
       localStorage.setItem("access_token", token);
-
       // ดึงข้อมูล profile จาก token (ถ้า backend ใส่ role/email ใน payload)
       // หรือเรียก /me ก็ได้
       const payload = parseJwt(token);

@@ -16,7 +16,7 @@ export default function HeadLeaves() {
     setErr("");
     setLoading(true);
     try {
-      // ✅ GET /leave-requests (เฉพาะหัวหน้า)
+      //  GET /leave-requests (เฉพาะหัวหน้า)
       const res = await api.get("/leave-requests");
       setRows(Array.isArray(res.data) ? res.data : []);
     } catch (e) {
@@ -46,7 +46,7 @@ export default function HeadLeaves() {
     setErr("");
     setDeciding(leaveId);
     try {
-      // ✅ PATCH /leave-requests/:id/approve  body: { status: 'approved' | 'rejected' }
+      // PATCH /leave-requests/:id/approve  body: { status: 'approved' | 'rejected' }
       await api.patch(
         `/leave-requests/${leaveId}/approve`,
         new URLSearchParams({ status }),
@@ -115,7 +115,7 @@ export default function HeadLeaves() {
             </thead>
             <tbody>
               {filtered.map((r) => {
-                const nurse = r.nurse ?? r.user ?? {}; // เผื่อโครงสร้างคุณแตกต่าง
+                const nurse = r.nurse ?? r.user ?? {};
                 return (
                   <tr key={r.id}>
                     <td>

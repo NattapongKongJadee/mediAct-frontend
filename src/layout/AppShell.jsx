@@ -20,7 +20,6 @@ export default function AppShell() {
             <span className="badge badge-outline badge-info">
               {user?.email}
             </span>
-            {/* <span className="badge badge-success">{user?.role}</span> */}
             <button className="btn btn-sm btn-error" onClick={logout}>
               Logout
             </button>

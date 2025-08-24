@@ -38,8 +38,6 @@ export default function NurseScheduleTable() {
           <table className="table">
             <thead>
               <tr>
-                {/* <th>Assignment</th>
-                <th>Shift</th> */}
                 <th>วัน</th>
                 <th>เวลา</th>
                 <th>หัวหน้าพยาบาล</th>
