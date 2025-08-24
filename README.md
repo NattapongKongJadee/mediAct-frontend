@@ -12,10 +12,6 @@
 # ติดตั้ง dependencies
 npm install
 
-# ตั้งค่าไฟล์ .env (ถ้ายังไม่มี ให้สร้าง)
-# ตัวอย่าง
-# .env
-VITE_API_BASE=http://localhost:3000
 
 # รันโหมดพัฒนา
 npm run dev
