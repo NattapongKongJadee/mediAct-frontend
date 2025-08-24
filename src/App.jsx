@@ -27,8 +27,13 @@ export default function App() {
   if (!user) {
     return (
       <div className="flex w-full h-screen items-center justify-center bg-info">
-        <div className="flex flex-col space-y-2 w-1/3">
+        <div className="flex flex-col justify-center space-y-2 w-1/3">
           <div>
+            <div className="flex my-4 items-center justify-center space-x-4">
+              <img src="/logo.png" alt="logo" className="w-16 h-auto" />
+              <div className="text-5xl text-white font-bold">ระบบเวรพยาบาล</div>
+            </div>
+
             <input
               type="text"
               placeholder="Email"

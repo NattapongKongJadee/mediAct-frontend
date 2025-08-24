@@ -1,5 +1,6 @@
 import axios from "axios";
 
+///   ยังไม่ได้ลง ENV โดยทั่วไปจะใช้ env
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE ?? "http://localhost:3000",
 });

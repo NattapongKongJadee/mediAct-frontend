@@ -19,7 +19,6 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-// helper: แปลงสตริงเป็น Date (ลอง ISO ก่อน เผื่อ backend เปลี่ยน, ไม่งั้นใช้ pattern ไทย)
 const parseDateTime = (value) => {
   if (!value) return null;
   const iso = new Date(value);
@@ -85,6 +84,7 @@ export default function NurseSchedule() {
             <div className="flex flex-row">
               <div className="flex gap-4 mt-2 mx-4">
                 <div className="flex items-center gap-2">
+                  {/** Label ช่วยบอกความหมายของเวร */}
                   <span className="w-4 h-4 rounded bg-blue-500 border border-blue-700"></span>
                   <span className="text-sm">เวรปกติ</span>
                 </div>
@@ -117,7 +117,7 @@ export default function NurseSchedule() {
                   borderColor: "#eab308",
                   color: "#111827",
                 },
-              }; // เหลืองเมื่อสถานะเป็น Pending
+              }; // event เป็นสีเหลืองเมื่อสถานะเป็น Pending
             }
             return {};
           }}
